@@ -1,0 +1,82 @@
+<div class="card-my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #tourForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="tour.name"
+               class="form-control"
+               id="name"
+               name="name"
+               placeholder="Enter your name"
+               required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" [(ngModel)]="tour.description"
+               class="form-control"
+               id="description"
+               name="description"
+               placeholder="Enter the description"
+               required #description="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="arrival">Arrival</label>
+        <input type="text" [(ngModel)]="tour.arrival"
+               class="form-control"
+               id="arrival"
+               name="arrival"
+               placeholder="Enter the arrival"
+               required #arrival="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="departure">Departure</label>
+        <input type="text" [(ngModel)]="tour.departure"
+               class="form-control"
+               id="departure"
+               name="departure"
+               placeholder="Enter the departure"
+               required #departure="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="transportType">Transport Type</label>
+        <input type="text" [(ngModel)]="tour.transportType"
+               class="form-control"
+               id="transportType"
+               name="transportType"
+               placeholder="Enter your Transport Type"
+               required #transportType=ngModel>
+        <div [hidden]="!transportType.pristine" class="alert alert-danger">Transport type is required</div>
+      </div>
+      <div class="form-group">
+        <label for="distance">Distance</label>
+        <input type="text" [(ngModel)]="tour.distance"
+               class="form-control"
+               id="distance"
+               name="distance"
+               placeholder="Enter the distance"
+               required #distance="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="estimatedTime">estimated Time</label>
+        <input type="text" [(ngModel)]="tour.estimatedTime"
+               class="form-control"
+               id="estimatedTime"
+               name="estimatedTime"
+               placeholder="Enter the estimated time"
+               required #estimatedTime="ngModel">
+      </div>
+      <div class="form-group">
+        <label for="routeImage">Route Image</label>
+        <input type="text" [(ngModel)]="tour.routeImage"
+               class="form-control"
+               id="routeImage"
+               name="routeImage"
+               placeholder="Enter the routeImage"
+               required #routeImage="ngModel">
+      </div>
+      <button type="submit" [disabled]="!tourForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
