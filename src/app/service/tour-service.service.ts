@@ -20,4 +20,8 @@ export class TourService {
   public findAll(): Observable<Tour[]> {
     return this.http.get<Tour[]>(this.tourUrl + '/all')
   }
+
+  public deleteTour(id: number | undefined) {
+    return this.http.delete<Tour>(this.tourUrl + '/' + id);
+  }
 }

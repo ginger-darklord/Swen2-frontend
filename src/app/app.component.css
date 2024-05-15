@@ -3,17 +3,6 @@
   display: flex;
 }
 
-#searchContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#searchInput {
-  border: none;
-  padding: 5px;
-}
-
 #searchButton {
   background-color: lightgray;
   border: none;
@@ -41,3 +30,4 @@
   height: 200px;
   border: 1px solid #ccc;
 }
+

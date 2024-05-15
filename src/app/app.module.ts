@@ -8,12 +8,14 @@ import {AppRoutes} from "./app.routes";
 import {TourService} from "./service/tour-service.service";
 import {TourFormComponent} from "./tour-form/tour-form.component";
 import { TourListComponent} from "./tour-list/tour-list.component";
+import {TourDeleteComponent} from "./tour-delete/tour-delete.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     TourFormComponent,
-    TourListComponent
+    TourListComponent,
+    TourDeleteComponent
   ],
   imports: [
     BrowserModule,

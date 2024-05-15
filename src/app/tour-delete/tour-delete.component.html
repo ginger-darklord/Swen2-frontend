@@ -1,0 +1,19 @@
+<div class="card-my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #tourForm="ngForm">
+      <div class="form-group">
+        <label for="id">Tour id</label>
+        <input type="number" [(ngModel)]="tour.id"
+               class="form-control"
+               id="id"
+               name="id"
+               placeholder="Enter the tour id"
+               required #id="ngModel">
+      </div>
+      <div [hidden]="!id.pristine" class="alert alert-danger">Id is required</div>
+
+      <button type="submit" [disabled]="!tourForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
