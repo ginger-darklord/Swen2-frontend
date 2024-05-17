@@ -8,4 +8,5 @@ export class Tour {
   distance: number | undefined;
   estimatedTime: string | undefined;
   routeImage: string | undefined;
+  editing: boolean = false;
 }

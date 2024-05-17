@@ -12,6 +12,9 @@
       <li class="nav-item">
         <a routerLink="/delete" class="btn btn-info">Delete Tour</a>
       </li>
+      <li class="nav-item">
+        <a routerLink="/update" class="btn btn-info">Update Tour</a>
+      </li>
     </ul>
 
     <form class="form-inline my-2 my-lg-0 ms-auto d-flex" id="search">
@@ -21,9 +24,20 @@
   </div>
 </nav>
 
-
+<!--<div class="btn-group" role="group">
+  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+    <a class="dropdown-item" href="#">Dropdown link</a>
+    <a class="dropdown-item" href="#">Dropdown link</a>
+  </div>
+</div>-->
 
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+
+<script type="text/javascript" src="../node_modules/jquery"></script>
+<script type="text/javascript" src="../node_modules/bootstrap"></script>
 

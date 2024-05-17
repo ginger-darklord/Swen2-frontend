@@ -24,4 +24,8 @@ export class TourService {
   public deleteTour(id: number | undefined) {
     return this.http.delete<Tour>(this.tourUrl + '/' + id);
   }
+
+  public updateTour(tour: Tour) {
+    return this.http.put<Tour>(this.tourUrl + '/' + tour.id, tour);
+  }
 }
