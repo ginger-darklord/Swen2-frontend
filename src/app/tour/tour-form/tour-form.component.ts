@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {TourService} from "../service/tour-service.service";
-import {Tour} from "../tour";
+import {TourService} from "../../service/tour-service.service";
+
+import {Tour} from "../../tour";
 
 @Component({
   selector: 'app-tour-form',

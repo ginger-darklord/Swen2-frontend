@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="upper-container">
+    <div class="info-boxes" *ngIf="tour">
+      <div class="info-box">{{tour.id}}.Tour - {{tour.name}}</div>
+      <div class="info-box">Description: {{tour.description}}</div>
+      <div class="info-box">Departure: {{tour.departure}}</div>
+      <div class="info-box">Arrival: {{tour.arrival}}</div>
+      <div class="info-box">Distance: {{tour.distance}}</div>
+      <div class="info-box">Transport Type: {{tour.transportType}}</div>
+      <div class="info-box">Estimated Time: {{tour.estimatedTime}}</div>
+    </div>
+    <div class="map">
+      <app-tour-map></app-tour-map>
+    </div>
+  </div>
+  <div class="lower-container">
+    <div class="tour-log-creation">
+      Tourlogs
+      <button class="btn btn-outline-info my-2 my-sm-0" routerLink="/createTourlog">+</button>
+    </div>
+    <div class="tourlogs">
+
+    </div>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Tour} from "../tour";
 import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class TourService {
 
   public findAll(): Observable<Tour[]> {
     return this.http.get<Tour[]>(this.tourUrl + '/all')
+  }
+
+  public findById(id: number | undefined) {
+    return this.http.get<Tour>(this.tourUrl + '/id/' + id);
   }
 
   public deleteTour(id: number | undefined) {

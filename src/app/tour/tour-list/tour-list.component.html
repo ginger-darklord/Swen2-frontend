@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="add-container">
+    <span>Tour</span>
+    <button routerLink="/create" class="btn btn-outline-info my-2 my-sm-0" type="submit">+</button>
+  </div>
+
+  <div class="tour-container" *ngFor="let tour of tours">
+    <span>{{tour.id}}.Tour - {{tour.name}}</span>
+    <button (click)="delete(tour.id)" class="btn btn-outline-info my-2 my-sm-0" id="delete">Delete</button>
+    <button (click)="detail(tour.id)" class="btn btn-outline-info my-2 my-sm-0" id="detail">Detail</button>
+  </div>
+</div>

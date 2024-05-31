@@ -1,15 +1,20 @@
 import { Routes, RouterModule } from '@angular/router';
 import {NgModule} from "@angular/core";
-import {TourFormComponent} from "./tour-form/tour-form.component";
-import {TourListComponent} from "./tour-list/tour-list.component";
-import {TourDeleteComponent} from "./tour-delete/tour-delete.component";
-import {TourUpdateComponent} from "./tour-update/tour-update.component";
+import {TourFormComponent} from "./tour/tour-form/tour-form.component";
+import {TourListComponent} from "./tour/tour-list/tour-list.component";
+import {TourUpdateComponent} from "./tour/tour-update/tour-update.component";
+import {TourMapComponent} from "./tour/tour-map/tour-map.component";
+import {TourDetailComponent} from "./tour/tour-detail/tour-detail.component";
+import {TourlogFormComponent} from "./tourlog/tourlog-form/tourlog-form.component";
 
 export const routes: Routes = [
   {path: 'create', component: TourFormComponent},
   {path: 'all', component: TourListComponent},
-  {path: 'delete', component: TourDeleteComponent},
-  {path: 'update', component: TourUpdateComponent}
+  {path: 'update', component: TourUpdateComponent},
+  {path: 'detail', component: TourDetailComponent},
+  {path: 'map', component: TourMapComponent},
+  {path: 'createTourlog', component: TourlogFormComponent}
+
 ];
 
 @NgModule({

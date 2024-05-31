@@ -1,0 +1,24 @@
+.container {
+  border: 2px solid cornflowerblue;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.add-container {
+  text-align: center;
+  border: 4px solid darkblue;
+}
+
+.tour-container {
+  border: 2px solid cornflowerblue;
+  text-align: center;
+}
+
+#delete {
+  float: right;
+}
+
+#detail {
+  float: right;
+}

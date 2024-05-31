@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {Tour} from "../tour";
-import {TourService} from "../service/tour-service.service";
+import {Tour} from "../../tour";
+import {TourService} from "../../service/tour-service.service";
 
 @Component({
   selector: 'app-tour-update',
@@ -15,7 +15,7 @@ export class TourUpdateComponent {
     this.tour = new Tour();
   }
 
-  editTour(id: number | undefined) {
+  editTour(id: number) {
     this.tour.id = id;
   }
   onSubmit() {

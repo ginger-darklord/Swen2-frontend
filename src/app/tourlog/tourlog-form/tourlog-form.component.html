@@ -1,0 +1,68 @@
+<div class="card-my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #tourlogForm="ngForm" id="tourlogForm">
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" [(ngModel)]="tourlog.date"
+               class="form-control"
+               id="date"
+               name="date"
+               required #date="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <input type="text" [(ngModel)]="tourlog.comment"
+               class="form-control"
+               id="comment"
+               name="comment"
+               placeholder="Write a comment"
+               max="255"
+               required #comment="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="difficulty">Difficulty</label>
+        <input type="number" [(ngModel)]="tourlog.difficulty"
+               class="form-control"
+               id="difficulty"
+               name="difficulty"
+               placeholder="Rate the difficulty"
+               min="1"
+               max="5"
+               required #difficulty="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="totalDistance">total Distance</label>
+        <input type="number" [(ngModel)]="tourlog.totalDistance"
+               class="form-control"
+               id="totalDistance"
+               name="totalDistance"
+               required #totalDistance="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="totalTime">total Time</label>
+        <input type="number" [(ngModel)]="tourlog.totalTime"
+               class="form-control"
+               id="totalTime"
+               name="totalTime"
+               required #totalTime=ngModel>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <input type="number" [(ngModel)]="tourlog.rating"
+               class="form-control"
+               id="rating"
+               name="rating"
+               required #rating="ngModel">
+      </div>
+
+      <button type="submit" [disabled]="!tourlogForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

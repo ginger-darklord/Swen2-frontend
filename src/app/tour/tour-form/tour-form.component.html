@@ -2,16 +2,6 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #tourForm="ngForm" id="tourForm">
       <div class="form-group">
-        <label for="id">Id</label>
-        <input type="text" [(ngModel)]="tour.id"
-               class="form-control"
-               id="id"
-               name="id"
-               placeholder="Enter your id"
-               required #id="ngModel">
-      </div>
-
-      <div class="form-group">
         <label for="name">Name</label>
         <input type="text" [(ngModel)]="tour.name"
                class="form-control"
@@ -20,6 +10,7 @@
                placeholder="Enter your name"
                required #name="ngModel">
       </div>
+      <div [hidden]="!name.pending" class="alert alert-danger">Name is required</div>
       <div class="form-group">
         <label for="description">Description</label>
         <input type="text" [(ngModel)]="tour.description"
@@ -55,6 +46,7 @@
                name="transportType"
                placeholder="Enter your Transport Type"
                required #transportType=ngModel>
+        <div [hidden]="!transportType.pending" class="alert alert-danger">Transport type is required</div>
       </div>
       <div class="form-group">
         <label for="distance">Distance</label>
@@ -74,16 +66,9 @@
                placeholder="Enter the estimated time"
                required #estimatedTime="ngModel">
       </div>
-      <div class="form-group">
-        <label for="routeImage">Route Image</label>
-        <input type="text" [(ngModel)]="tour.routeImage"
-               class="form-control"
-               id="routeImage"
-               name="routeImage"
-               placeholder="Enter the routeImage"
-               required #routeImage="ngModel">
-      </div>
-      <button type="submit" class="btn btn-info">Save changes</button>
+
+      <button type="submit" [disabled]="!tourForm.form.valid"
+              class="btn btn-info">Submit</button>
     </form>
   </div>
 </div>

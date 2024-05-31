@@ -1,5 +1,5 @@
 export class Tour {
-  id: number | undefined;
+  id!: number;
   name : string | undefined;
   description: string | undefined;
   arrival: string | undefined;
@@ -7,6 +7,4 @@ export class Tour {
   transportType: string | undefined;
   distance: number | undefined;
   estimatedTime: string | undefined;
-  routeImage: string | undefined;
-  editing: boolean = false;
 }

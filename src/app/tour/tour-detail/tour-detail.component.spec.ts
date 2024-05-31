@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TourDeleteComponent } from './tour-delete.component';
+import { TourDetailComponent } from './tour-detail.component';
 
-describe('TourDeleteComponent', () => {
-  let component: TourDeleteComponent;
-  let fixture: ComponentFixture<TourDeleteComponent>;
+describe('TourDetailComponent', () => {
+  let component: TourDetailComponent;
+  let fixture: ComponentFixture<TourDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TourDeleteComponent]
+      imports: [TourDetailComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(TourDeleteComponent);
+    fixture = TestBed.createComponent(TourDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
