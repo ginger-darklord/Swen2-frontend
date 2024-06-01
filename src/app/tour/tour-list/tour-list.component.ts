@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Tour} from "../../tour";
-import {TourService} from "../../service/tour-service.service";
+import {TourService} from "../../service/tour.service";
 import {NumberService} from "../../service/number.service";
 import {Router} from "@angular/router";
 

@@ -1,0 +1,28 @@
+<div class="card-body">
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Departure</th>
+      <th scope="col">Arrival</th>
+      <th scope="col">Transport Type</th>
+      <th scope="col">Distance</th>
+      <th scope="col">estimated Time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tours of tours">
+      <td>{{ tours.id }}.Tour</td>
+      <td>{{ tours.name }}</td>
+      <td>{{ tours.description }}</td>
+      <td>{{ tours.departure }}</td>
+      <td>{{ tours.arrival }}</td>
+      <td>{{ tours.transportType }}</td>
+      <td>{{ tours.distance }}</td>
+      <td>{{ tours.estimatedTime }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

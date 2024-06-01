@@ -15,5 +15,9 @@ export class TourlogService {
   public createTourLog(tourlog: Tourlog) {
     return this.http.post<Tourlog>(this.tourLogUrl + '/create', tourlog);
   }
+
+  public getTourlogsByTour(tourId: number) {
+    return this.http.get<Tourlog[]>(this.tourLogUrl + '/' + tourId + '/tourlogs');
+  }
 }
 

@@ -13,10 +13,9 @@
         <a routerLink="/map" class="btn btn-info">Map</a>
       </li>
     </ul>
-
-    <form class="form-inline my-2 my-lg-0 ms-auto d-flex" id="search">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button routerLink="/search" class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+    <form (ngSubmit)="onSubmit()" class="search d-flex">
+      <input type="text" class="form-control rounded" [(ngModel)]="keyword" name="keyword" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+      <button type="submit" class="btn btn-info" id="searchButton">Search</button>
     </form>
   </div>
 </nav>

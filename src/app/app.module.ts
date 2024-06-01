@@ -6,7 +6,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterOutlet} from "@angular/router";
 import {AppRoutes} from "./app.routes";
 
-import {TourService} from "./service/tour-service.service";
+import {TourService} from "./service/tour.service";
 import {MarkerService} from "./service/marker.service";
 
 import {TourFormComponent} from "./tour/tour-form/tour-form.component";
@@ -15,6 +15,8 @@ import {TourUpdateComponent} from "./tour/tour-update/tour-update.component";
 import {TourMapComponent} from "./tour/tour-map/tour-map.component";
 import {TourDetailComponent} from "./tour/tour-detail/tour-detail.component";
 import {TourlogFormComponent} from "./tourlog/tourlog-form/tourlog-form.component";
+import {TourSearchComponent} from "./tour/tour-search/tour-search.component";
+import {SearchService} from "./service/search.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {TourlogFormComponent} from "./tourlog/tourlog-form/tourlog-form.componen
     TourUpdateComponent,
     TourMapComponent,
     TourDetailComponent,
-    TourlogFormComponent
+    TourlogFormComponent,
+    TourSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import {TourlogFormComponent} from "./tourlog/tourlog-form/tourlog-form.componen
   ],
   providers: [
     TourService,
-    MarkerService
+    MarkerService,
+    SearchService
   ],
   exports: [
     TourMapComponent

@@ -3,7 +3,7 @@ import {Tourlog} from "../../tourlog";
 import {TourlogService} from "../../service/tourlog.service";
 import {NumberService} from "../../service/number.service";
 import {Tour} from "../../tour";
-import {TourService} from "../../service/tour-service.service";
+import {TourService} from "../../service/tour.service";
 import {Observable} from "rxjs";
 
 @Component({

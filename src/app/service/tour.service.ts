@@ -33,4 +33,8 @@ export class TourService {
   public updateTour(tour: Tour) {
     return this.http.put<Tour>(this.tourUrl + '/' + tour.id, tour);
   }
+
+  public search(keyword: string | undefined) {
+    return this.http.get<Tour[]>(this.tourUrl + '/search');
+  }
 }

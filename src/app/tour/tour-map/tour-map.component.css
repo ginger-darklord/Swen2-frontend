@@ -10,9 +10,8 @@
 .map-frame {
   border: 2px solid black;
   margin: 30px;
-  height: 60%;
-  width: 50%;
-  float: right;
+  height: 100%;
+  width: 100%;
 }
 
 #map {

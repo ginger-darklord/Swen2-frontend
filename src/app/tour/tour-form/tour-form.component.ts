@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {TourService} from "../../service/tour-service.service";
+import {TourService} from "../../service/tour.service";
 
 import {Tour} from "../../tour";
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NumberService} from "../../service/number.service";
-import {TourService} from "../../service/tour-service.service";
+import {TourService} from "../../service/tour.service";
 import {Tour} from "../../tour";
+import {TourlogService} from "../../service/tourlog.service";
+import {Tourlog} from "../../tourlog";
 
 @Component({
   selector: 'app-tour-detail',
@@ -9,10 +11,11 @@ import {Tour} from "../../tour";
   styleUrl: './tour-detail.component.css'
 })
 export class TourDetailComponent {
-  tourId: number = 0;
+  tourId!: number;
   tour: Tour| undefined;
+  tourlogs: Tourlog[] | undefined;
 
-  constructor(public numberService: NumberService, public tourService: TourService) {
+  constructor(public numberService: NumberService, public tourService: TourService, public tourlogService: TourlogService) {
   }
 
   ngOnInit(): void {
@@ -20,6 +23,10 @@ export class TourDetailComponent {
     console.log(this.tourId);
     this.tourService.findById(this.tourId).subscribe(data => {
       this.tour = data;
+    })
+
+    this.tourlogService.getTourlogsByTour(this.tourId).subscribe(logs => {
+      this.tourlogs = logs;
     })
   }
 }
