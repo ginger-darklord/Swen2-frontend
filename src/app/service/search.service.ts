@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class SearchService {
 
-  private keyword : string |undefined;
+  private keyword : string = '';
 
-  setKeyword(keyword : string |undefined) {
+  setKeyword(keyword : string) {
     this.keyword = keyword;
   }
 

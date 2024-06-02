@@ -4,6 +4,7 @@ import {TourService} from "../../service/tour.service";
 import {Tour} from "../../tour";
 import {TourlogService} from "../../service/tourlog.service";
 import {Tourlog} from "../../tourlog";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-tour-detail',
@@ -15,7 +16,7 @@ export class TourDetailComponent {
   tour: Tour| undefined;
   tourlogs: Tourlog[] | undefined;
 
-  constructor(public numberService: NumberService, public tourService: TourService, public tourlogService: TourlogService) {
+  constructor(public numberService: NumberService, public tourService: TourService, public tourlogService: TourlogService, public router: Router) {
   }
 
   ngOnInit(): void {
@@ -28,5 +29,17 @@ export class TourDetailComponent {
     this.tourlogService.getTourlogsByTour(this.tourId).subscribe(logs => {
       this.tourlogs = logs;
     })
+  }
+
+  tourlogDelete(id: number | undefined) {
+    this.tourlogService.deleteTourlog(id).subscribe(
+      () => {
+        console.log('Tourlog deleted successfully');
+        this.router.navigate(['/all'])
+      },
+      error => {
+        console.error('Tourlog not deleted successfully', error);
+      }
+    );
   }
 }

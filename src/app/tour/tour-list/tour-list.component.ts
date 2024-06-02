@@ -3,6 +3,7 @@ import {Tour} from "../../tour";
 import {TourService} from "../../service/tour.service";
 import {NumberService} from "../../service/number.service";
 import {Router} from "@angular/router";
+import {ReportService} from "../../service/report.service";
 
 @Component({
   selector: 'app-tour-list',
@@ -13,7 +14,7 @@ export class TourListComponent {
 
   tours: Tour[] | undefined;
 
-  constructor(public tourService: TourService, public numberService: NumberService, private router:Router) {}
+  constructor(public tourService: TourService, public numberService: NumberService, private router:Router, private reportService: ReportService) {}
 
   ngOnInit() {
     this.tourService.findAll().subscribe(data => {
@@ -36,5 +37,18 @@ export class TourListComponent {
   detail(id:number) {
     this.numberService.setNumber(id);
     this.router.navigate(['/detail']);
+  }
+
+  download(id: number | undefined) {
+    this.reportService.report(id).subscribe((blob : Blob) => {
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `tour_report_${id}.pdf`;
+      a.click();
+      window.URL.revokeObjectURL(url);
+    }, error => {
+      console.error('Error downloading the report', error);
+    });
   }
 }

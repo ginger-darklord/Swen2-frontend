@@ -14,10 +14,6 @@ export class TourUpdateComponent {
   constructor(private tourService: TourService) {
     this.tour = new Tour();
   }
-
-  editTour(id: number) {
-    this.tour.id = id;
-  }
   onSubmit() {
     this.tourService.updateTour(this.tour).subscribe(
       ()=> {

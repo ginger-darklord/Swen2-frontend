@@ -1,7 +1,6 @@
 import {Component} from '@angular/core'
 import {SearchService} from "./service/search.service";
 import {Router} from "@angular/router";
-import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +9,7 @@ import {FormsModule} from "@angular/forms";
 
 export class AppComponent {
   title = 'SWEN2_Tourplanner';
-  keyword : string | undefined;
+  keyword : string = '';
 
   constructor(public searchService: SearchService, public router: Router) {
   }

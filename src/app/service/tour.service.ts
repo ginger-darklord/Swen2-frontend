@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Tour} from "../tour";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
@@ -34,7 +34,8 @@ export class TourService {
     return this.http.put<Tour>(this.tourUrl + '/' + tour.id, tour);
   }
 
-  public search(keyword: string | undefined) {
-    return this.http.get<Tour[]>(this.tourUrl + '/search');
+  public search(keyword: string) {
+    const params = new HttpParams().set('keyword', keyword);
+    return this.http.get<Tour[]>(this.tourUrl + '/search',{params});
   }
 }

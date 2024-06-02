@@ -18,33 +18,35 @@
     <div class="tour-log-creation">
       Tourlogs
       <button class="btn btn-outline-info my-2 my-sm-0" routerLink="/createTourlog">+</button>
-    </div>
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Date</th>
-            <th scope="col">Duration</th>
-            <th scope="col">Distance</th>
-            <th scope="col">Difficulty</th>
-            <th scope="col">Rating</th>
-            <th scope="col">Comment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let tourlogs of tourlogs">
-            <td>{{ tourlogs.id }}.Tour</td>
-            <td>{{ tourlogs.date }}</td>
-            <td>{{ tourlogs.totalTime }}</td>
-            <td>{{ tourlogs.totalDistance }}</td>
-            <td>{{ tourlogs.difficulty }}</td>
-            <td>{{ tourlogs.rating }}</td>
-            <td>{{ tourlogs.comment }}</td>
-
-          </tr>
-        </tbody>
-      </table>
+      <button class="btn btn-outline-info" routerLink="/updateTourlog" type="button">Update</button>
+      <div class="card-body">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Distance</th>
+              <th scope="col">Difficulty</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Comment</th>
+              <th scope="col">#</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let tourlog of tourlogs">
+              <td>{{ tourlog.id }}.Tour</td>
+              <td>{{ tourlog.date }}</td>
+              <td>{{ tourlog.totalTime }}</td>
+              <td>{{ tourlog.totalDistance }}</td>
+              <td>{{ tourlog.difficulty }}</td>
+              <td>{{ tourlog.rating }}</td>
+              <td>{{ tourlog.comment }}</td>
+              <td><button class="btn btn-outline-info" (click)="tourlogDelete(tourlog.id)" type="button">Delete</button> </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

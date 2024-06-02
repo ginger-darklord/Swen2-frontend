@@ -10,13 +10,15 @@ import {SearchService} from "../../service/search.service";
   styleUrl: './tour-search.component.css'
 })
 export class TourSearchComponent {
-  keyword : string | undefined;
+  keyword : string = '';
   tours : Tour[] | undefined;
 
-  constructor(public tourService: TourService, public searchService: SearchService) {}
+  constructor(public tourService: TourService, public searchService: SearchService) {
+  }
 
   ngOnInit() {
     this.keyword = this.searchService.getKeyword();
+    console.log(this.keyword);
     this.tourService.search(this.keyword).subscribe(data => {
       this.tours = data;
     })

@@ -17,6 +17,9 @@ import {TourDetailComponent} from "./tour/tour-detail/tour-detail.component";
 import {TourlogFormComponent} from "./tourlog/tourlog-form/tourlog-form.component";
 import {TourSearchComponent} from "./tour/tour-search/tour-search.component";
 import {SearchService} from "./service/search.service";
+import {TourlogUpdateComponent} from "./tourlog/tourlog-update/tourlog-update.component";
+import {ReportService} from "./service/report.service";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import {SearchService} from "./service/search.service";
     TourMapComponent,
     TourDetailComponent,
     TourlogFormComponent,
-    TourSearchComponent
+    TourSearchComponent,
+    TourlogUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -35,12 +39,14 @@ import {SearchService} from "./service/search.service";
     HttpClientModule,
     ReactiveFormsModule,
     RouterOutlet,
-    AppRoutes
+    AppRoutes,
   ],
   providers: [
     TourService,
     MarkerService,
-    SearchService
+    SearchService,
+    ReportService,
+    provideAnimationsAsync()
   ],
   exports: [
     TourMapComponent

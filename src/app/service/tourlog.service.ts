@@ -7,7 +7,6 @@ import {Tourlog} from "../tourlog";
 })
 export class TourlogService {
   private tourLogUrl:string;
-
   constructor(private http: HttpClient) {
     this.tourLogUrl = 'http://localhost:8080/tourlog';
   }
@@ -19,5 +18,14 @@ export class TourlogService {
   public getTourlogsByTour(tourId: number) {
     return this.http.get<Tourlog[]>(this.tourLogUrl + '/' + tourId + '/tourlogs');
   }
+
+  public deleteTourlog(id : number | undefined) {
+    return this.http.delete<Tourlog>(this.tourLogUrl + '/' + id);
+  }
+
+  public updateTourlog(tourlog : Tourlog) {
+    return this.http.put<Tourlog>(this.tourLogUrl + '/' + tourlog.id, tourlog);
+  }
+
 }
 
